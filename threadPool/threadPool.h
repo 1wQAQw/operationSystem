@@ -7,7 +7,7 @@
 typedef struct threadpool_t
 {
     /**/
-    pthread_t *threadId;
+    pthread_t *threadIds;
 
     /* 最小线程数 */
     int minThreads;
@@ -15,8 +15,11 @@ typedef struct threadpool_t
     int maxThreads;
 }threadpool_t;
 
+/* 线程池初始化 */
+int threadPoolInit(threadpool_t *pool, int minThreads, int maxThreads);
 
-
+/* 线程池的销毁 */
+int threadPoolDestroy(threadpool_t *pool);
 
 
 
